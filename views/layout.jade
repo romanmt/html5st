@@ -1,0 +1,23 @@
+!!!
+html
+  head
+    title= title
+    script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js")
+    script(type="text/javascript", src="/javascripts/jquery.jplayer.min.js")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(type="text/css", href="/skin/jplayer.blue.monday.css", rel="stylesheet")
+    script
+      $(document).ready(function() {
+        $("#jquery_jplayer_1").jPlayer( {
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              mp3: "/stream/Brad_Sucks-Making_Me_Nervous.mp3",
+              oga: "/stream/Brad_Sucks-Making_Me_Nervous.ogg"
+            });
+            $(this).jPlayer("play");
+
+          },
+          supplied: "mp3, oga"
+        });
+      });
+  body!= body
